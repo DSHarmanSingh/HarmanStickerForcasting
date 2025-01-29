@@ -6,7 +6,7 @@ df= pd.read_csv(r"C:\Users\harma\OneDrive\Desktop\datasets\stickerSales\df_clean
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 import xgboost as xgb
-X= df.drop(columns= ['num_sold'])
+X= df.drop(columns= ['id', 'num_sold'])
 y= df['num_sold']
 X_train, X_test, y_train, y_test= train_test_split(X, y, test_size= 0.2, random_state= 42)
 xgb_regression= xgb.XGBRegressor(objective= 'reg:squarederror', n_estimators= 300, learning_rate= 0.2, max_depth= 6, subsample= 0.8, random_state= 42)
