@@ -4,7 +4,7 @@ import joblib
 from sklearn.preprocessing import LabelEncoder
 import datetime
 
-model= joblib.load("xgboost_sales_model.pkl")
+model= joblib.load("final_sticker_sales_predictor.pkl")
 try:
     target_encodings= joblib.load("target_encodings.pkl")
 except:
